@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Mensajería Express - Historial de tickets</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="historial.css">
+
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+
+            <i class="ri-truck-line"></i>
+
+            <div>
+                <h1>Historial de tickets</h1>
+                <span>Control de solicitudes de soporte</span>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="btn-volver">
+            <i class="ri-arrow-left-line"></i>
+            Volver
+        </a>
+
+    </header>
+
+    <main class="contenedor">
+
+        <section class="tarjeta">
+
+            <div class="encabezado">
+
+                <div class="icono-historial">
+                    <i class="ri-ticket-2-line"></i>
+                </div>
+
+                <div>
+                    <h2>Mis tickets</h2>
+
+                    <p>
+                        Consulta el estado y seguimiento de tus solicitudes de soporte.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="usuario-logueado">
+
+                <div class="usuario-icono">
+                    <i class="ri-user-line"></i>
+                </div>
+
+                <div class="usuario-info">
+
+                    <span>
+                        Back Office conectado
+                    </span>
+
+                    <strong id="usuarioActual">
+                        Cargando usuario...
+                    </strong>
+
+                </div>
+
+                <div class="usuario-estado">
+
+                    <i class="ri-checkbox-circle-fill"></i>
+
+                    Conectado
+
+                </div>
+
+            </div>
+
+
+            <div class="resumen">
+
+                <div class="resumen-card">
+
+                    <div class="resumen-icono">
+                        <i class="ri-ticket-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Total</span>
+                        <strong id="totalTickets">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="resumen-card">
+
+                    <div class="resumen-icono pendiente">
+                        <i class="ri-time-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Pendientes</span>
+                        <strong id="ticketsPendientes">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="resumen-card">
+
+                    <div class="resumen-icono revision">
+                        <i class="ri-loader-4-line"></i>
+                    </div>
+
+                    <div>
+                        <span>En revisión</span>
+                        <strong id="ticketsRevision">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="resumen-card">
+
+                    <div class="resumen-icono resuelto">
+                        <i class="ri-checkbox-circle-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Resueltos</span>
+                        <strong id="ticketsResueltos">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="herramientas">
+
+                <div class="buscador">
+
+                    <i class="ri-search-line"></i>
+
+                    <input type="text" id="buscarTicket" placeholder="Buscar por número, asunto o categoría..."
+                        autocomplete="off">
+
+                </div>
+
+
+                <div class="filtro">
+
+                    <i class="ri-filter-3-line"></i>
+
+                    <select id="filtroEstado">
+
+                        <option value="Todos">
+                            Todos los estados
+                        </option>
+
+                        <option value="Pendiente">
+                            Pendientes
+                        </option>
+
+                        <option value="En revisión">
+                            En revisión
+                        </option>
+
+                        <option value="Resuelto">
+                            Resueltos
+                        </option>
+
+                        <option value="Cerrado">
+                            Cerrados
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div id="cargando" class="estado-cargando">
+
+                <i class="ri-loader-4-line ri-spin"></i>
+
+                <span>
+                    Cargando historial...
+                </span>
+
+            </div>
+
+
+            <div id="sinTickets" class="sin-tickets" style="display:none;">
+
+                <div class="sin-tickets-icono">
+
+                    <i class="ri-ticket-2-line"></i>
+
+                </div>
+
+                <h3>
+                    No tienes tickets
+                </h3>
+
+                <p>
+                    Cuando crees una solicitud de soporte aparecerá aquí.
+                </p>
+
+                <a href="ticket.html" class="btn-crear">
+
+                    <i class="ri-add-line"></i>
+
+                    Crear ticket
+
+                </a>
+
+            </div>
+
+
+            <div id="listaTickets" class="lista-tickets"></div>
+
+
+            <div id="sinResultados" class="sin-tickets" style="display:none;">
+
+                <div class="sin-tickets-icono">
+
+                    <i class="ri-search-line"></i>
+
+                </div>
+
+                <h3>
+                    No se encontraron tickets
+                </h3>
+
+                <p>
+                    Prueba con otro término de búsqueda o cambia el filtro.
+                </p>
+
+            </div>
+
+
+            <div class="pie">
+
+                <a href="ticket.html" class="btn-nuevo-ticket">
+
+                    <i class="ri-add-line"></i>
+
+                    Crear nuevo ticket
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="modalTicket" class="modal">
+
+        <div class="modal-contenido">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-ticket-numero" id="modalNumero">
+                        Ticket #0
+                    </span>
+
+                    <h3 id="modalAsunto">
+                        Ticket
+                    </h3>
+
+                </div>
+
+                <button type="button" id="cerrarModal" class="btn-cerrar">
+
+                    <i class="ri-close-line"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-estado" id="modalEstado">
+                Pendiente
+            </div>
+
+
+            <div class="modal-datos">
+
+                <div>
+                    <span>Categoría</span>
+                    <strong id="modalCategoria">-</strong>
+                </div>
+
+                <div>
+                    <span>Prioridad</span>
+                    <strong id="modalPrioridad">-</strong>
+                </div>
+
+                <div>
+                    <span>Creado</span>
+                    <strong id="modalFecha">-</strong>
+                </div>
+
+                <div>
+                    <span>Actualizado</span>
+                    <strong id="modalActualizado">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="modal-seccion">
+
+                <span class="modal-label">
+                    Descripción
+                </span>
+
+                <p id="modalDescripcion">
+                    -
+                </p>
+
+            </div>
+
+
+            <div class="modal-seccion">
+
+                <span class="modal-label">
+                    Respuesta de soporte
+                </span>
+
+                <p id="modalRespuesta">
+                    Aún no hay respuesta de soporte.
+                </p>
+
+            </div>
+
+
+            <div id="modalArchivo" class="modal-seccion archivo-modal" style="display:none;">
+
+                <span class="modal-label">
+                    Archivo adjunto
+                </span>
+
+                <a id="modalArchivoLink" href="#" target="_blank" rel="noopener noreferrer">
+
+                    <i class="ri-attachment-2"></i>
+
+                    Ver archivo adjunto
+
+                </a>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button" id="btnCerrarModal">
+                    Cerrar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="historial.js"></script>
+
+
+</body>
+
+</html>

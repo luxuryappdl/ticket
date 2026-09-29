@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #f4f7fb 0%, #e9eef5 100%);
+    color: #1f2937;
+}
+
+.header {
+    width: 100%;
+    min-height: 82px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo>i {
+    font-size: 38px;
+    color: #111827;
+}
+
+.logo h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.logo span {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 17px;
+    border-radius: 9px;
+    text-decoration: none;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-volver:hover {
+    background: #e5e7eb;
+    transform: translateY(-1px);
+}
+
+.contenedor {
+    width: 100%;
+    padding: 45px 20px 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta {
+    width: 100%;
+    max-width: 720px;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.encabezado-formulario {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 24px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.icono-ayuda {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #f3f4f6;
+    color: #111827;
+    font-size: 29px;
+}
+
+.encabezado-formulario h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: #111827;
+}
+
+.encabezado-formulario p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.usuario-logueado {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 11px;
+    background: #f9fafb;
+}
+
+.usuario-icono {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: #374151;
+    font-size: 19px;
+}
+
+.usuario-info {
+    flex: 1;
+}
+
+.usuario-info span {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.usuario-info strong {
+    font-size: 14px;
+    color: #111827;
+}
+
+.usuario-estado {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #374151;
+}
+
+.usuario-estado i {
+    font-size: 15px;
+}
+
+#formularioAyuda {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.campo label i {
+    font-size: 17px;
+    color: #4b5563;
+}
+
+.opcional {
+    margin-left: 4px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    outline: none;
+    background: #ffffff;
+    color: #111827;
+    font-family: inherit;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #6b7280;
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.12);
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contador {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.archivo-contenedor {
+    position: relative;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    background: #f8fafc;
+    overflow: hidden;
+}
+
+.archivo-contenedor input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.archivo-info {
+    min-height: 70px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.archivo-info>i {
+    font-size: 28px;
+    color: #64748b;
+}
+
+.archivo-info strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.archivo-info span {
+    display: block;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.campo small {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #f3f4f6;
+}
+
+.aviso>i {
+    margin-top: 1px;
+    font-size: 20px;
+    color: #4b5563;
+}
+
+.aviso strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.aviso p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #6b7280;
+}
+
+.acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.acciones button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2 ease;
+}
+
+
+.btn-cancelar {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.btn-cancelar:hover {
+    background: #e5e7eb;
+}
+
+.btn-enviar {
+    background: #111827;
+    color: #ffffff;
+}
+
+.btn-enviar:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+.btn-enviar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.mensaje-exito {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 9999;
+}
+
+.mensaje-exito.mostrar {
+    display: flex;
+}
+
+.mensaje-contenido {
+    width: 100%;
+    max-width: 420px;
+    padding: 32px;
+    border-radius: 18px;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+.icono-exito {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #111827;
+    font-size: 35px;
+}
+
+.mensaje-contenido h3 {
+    margin-bottom: 8px;
+    font-family: 21px;
+    color: #111827;
+}
+
+.mensaje-contenido p {
+    margin-bottom: 22px;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mensaje-contenido button {
+    border: none;
+    padding: 11px 22px;
+    border-radius: 9px;
+    background: #111827;
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .header {
+        min-height: 72px;
+        padding: 12px 20px;
+    }
+
+    .logo h1 {
+        font-size: 17px;
+    }
+
+    .logo>i {
+        font-size: 30px;
+    }
+
+    .btn-volver {
+        padding: 9px 12px;
+    }
+
+    .btn-volver i {
+        display: none;
+    }
+
+    .contenedor {
+        padding: 25px 15px 40px;
+    }
+
+    .tarjeta {
+        padding: 22px 18px;
+    }
+
+    .encabezado-formulario {
+        align-items: flex-start;
+    }
+
+    .encabezado-formulario h2 {
+        font-size: 21px;
+    }
+
+    .usuario-logueado {
+        flex-wrap: wrap;
+    }
+
+    .usuario-estado {
+        width: 100%;
+        padding-left: 52px;
+    }
+
+    .acciones {
+        flex-direction: column-reverse;
+    }
+
+    .acciones button {
+        width: 100%;
+    }
+}

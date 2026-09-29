@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mensajería Express - Soporte técnico</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="ayuda.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+
+            <i class="ri-truck-line"></i>
+
+            <div>
+                <h1>Soporte técnico</h1>
+                <span>Manda tu ticket de problemas</span>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="btn-volver">
+            <i class="ri-arrow-left-line"></i>
+            Volver
+        </a>
+
+    </header>
+
+    <main class="contenedor">
+
+        <section class="tarjeta">
+
+            <div class="encabezado-formulario">
+
+                <div class="icono-ayuda">
+                    <i class="ri-tools-line"></i>
+                </div>
+
+                <div>
+                    <h2>Solicitar soporte</h2>
+
+                    <p>
+                        Reporta cualquier problema técnico
+                        de tu equipo o sistema.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 USUARIO ACTUAL
+            ====================================================== -->
+
+            <div class="usuario-logueado">
+
+                <div class="usuario-icono">
+                    <i class="ri-user-line"></i>
+                </div>
+
+                <div class="usuario-info">
+
+                    <span>
+                        Usuario conectado
+                    </span>
+
+                    <strong id="usuarioActual">
+                        Cargando usuario...
+                    </strong>
+
+                </div>
+
+                <div class="usuario-estado">
+
+                    <i class="ri-checkbox-circle-fill"></i>
+
+                    Conectado
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 FORMULARIO
+            ====================================================== -->
+
+            <form id="formularioAyuda" novalidate>
+
+                <div class="campo">
+
+                    <label for="categoria">
+                        <i class="ri-folder-settings-line"></i>
+                        Tipo de problema
+                    </label>
+
+                    <select id="categoria" name="categoria" required>
+
+                        <option value="">
+                            Selecciona el tipo de problema
+                        </option>
+
+                        <option value="Computadora">
+                            💻 Computadora
+                        </option>
+
+                        <option value="Impresora">
+                            🖨️ Impresora
+                        </option>
+
+                        <option value="Internet / Red">
+                            🌐 Internet / Red
+                        </option>
+
+                        <option value="Sistema">
+                            ⚙️ Sistema
+                        </option>
+
+                        <option value="Lector / Escáner">
+                            📠 Lector / Escáner
+                        </option>
+
+                        <option value="Pantalla / Monitor">
+                            🖥️ Pantalla / Monitor
+                        </option>
+
+                        <option value="Teclado / Mouse">
+                            🖱️ Teclado / Mouse
+                        </option>
+
+                        <option value="Otro">
+                            🔧 Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="prioridad">
+                        <i class="ri-alarm-warning-line"></i>
+                        Prioridad
+                    </label>
+
+                    <select id="prioridad" name="prioridad" required>
+
+                        <option value="Normal">
+                            Normal
+                        </option>
+
+                        <option value="Alta">
+                            Alta
+                        </option>
+
+                        <option value="Urgente">
+                            Urgente
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="asunto">
+                        <i class="ri-chat-1-line"></i>
+                        Asunto
+                    </label>
+
+                    <input type="text" id="asunto" name="asunto" maxlength="150"
+                        placeholder="Ejemplo: El mouse no me funciona" autocomplete="off" required>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="descripcion">
+                        <i class="ri-file-text-line"></i>
+                        Describe el problema
+                    </label>
+
+                    <textarea id="descripcion" name="descripcion" rows="7" maxlength="2000"
+                        placeholder="Explica detalladamente qué problema estás teniendo..." required></textarea>
+
+                    <div class="contador">
+
+                        <span>
+                            Describe el problema con la mayor cantidad
+                            de detalles posible.
+                        </span>
+
+                        <span id="contadorDescripcion">
+                            0 / 2000
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="archivo">
+
+                        <i class="ri-attachment-2"></i>
+
+                        Adjuntar captura o archivo
+
+                        <span class="opcional">
+                            Opcional
+                        </span>
+
+                    </label>
+
+                    <div class="archivo-contenedor">
+
+                        <input type="file" id="archivo" name="archivo" accept="image/*,.pdf,.txt,.doc,.docx">
+
+                        <div class="archivo-info">
+
+                            <i class="ri-upload-cloud-2-line"></i>
+
+                            <div>
+
+                                <strong>
+                                    Seleccionar archivo
+                                </strong>
+
+                                <span>
+                                    Captura, fotografía o documento
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <small id="nombreArchivo">
+                        No se ha seleccionado ningún archivo.
+                    </small>
+
+                </div>
+
+
+                <div class="aviso">
+
+                    <i class="ri-information-line"></i>
+
+                    <div>
+
+                        <strong>
+                            Información
+                        </strong>
+
+                        <p>
+                            Tu solicitud será enviada al área de
+                            soporte técnico para que pueda ser revisada.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="acciones">
+
+                    <button type="button" class="btn-cancelar" id="btnCancelar">
+
+                        <i class="ri-close-line"></i>
+
+                        Cancelar
+
+                    </button>
+
+
+                    <button type="submit" class="btn-enviar" id="btnEnviar">
+
+                        <i class="ri-send-plane-fill"></i>
+
+                        Crear ticket
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         MENSAJE DE ÉXITO
+    ========================================================== -->
+
+    <div id="mensajeExito" class="mensaje-exito">
+
+        <div class="mensaje-contenido">
+
+            <div class="icono-exito">
+
+                <i id="iconoResultado" class="ri-checkbox-circle-line"></i>
+
+            </div>
+
+            <h3 id="tituloResultado">
+                Ticket preparado
+            </h3>
+
+            <p id="textoExito">
+                Tu solicitud está lista.
+            </p>
+
+            <button type="button" id="cerrarMensaje">
+                Entendido
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         SUPABASE
+    ========================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="ayuda.js"></script>
+
+</body>
+
+</html>

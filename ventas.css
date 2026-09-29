@@ -1,0 +1,2914 @@
+/* =========================================================
+   MENSAJERÍA EXPRESS
+   SISTEMA DE VENTAS
+   ========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #f5f5f5;
+
+    color:
+        #222;
+
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.encabezado {
+
+    width: 100%;
+
+    min-height: 75px;
+
+    background:
+        #ffffff;
+
+    border-bottom:
+        1px solid #e5e5e5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        12px 35px;
+
+}
+
+
+.logo-contenedor {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+}
+
+
+.logo-contenedor h1 {
+
+    font-size: 19px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.logo-contenedor span {
+
+    font-size: 12px;
+
+    color:
+        #777;
+
+}
+
+
+/* =========================================================
+   USUARIO
+   ========================================================= */
+
+.usuario-contenedor {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.usuario {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 14px;
+
+}
+
+
+.usuario i {
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
+   BOTÓN INICIAR SESIÓN
+   ========================================================= */
+
+.login-boton {
+
+    border:
+        1px solid #222;
+
+    background:
+        white;
+
+    color:
+        #222;
+
+    padding:
+        10px 15px;
+
+    border-radius:
+        7px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    transition:
+        .2s;
+
+}
+
+
+.login-boton:hover {
+
+    background:
+        #222;
+
+    color:
+        white;
+
+}
+
+
+/* =========================================================
+   BOTÓN REGISTRARSE
+   ========================================================= */
+
+.login-boton:hover {
+
+
+    border:
+        none;
+
+    background:
+        #222;
+
+    color:
+        white;
+
+    padding:
+        10px 15px;
+
+    border-radius:
+        7px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    transition:
+        .2s;
+
+}
+
+
+.login-boton:hover {
+
+
+    background:
+        #444;
+
+}
+
+
+/* =========================================================
+   BOTÓN CERRAR SESIÓN
+   ========================================================= */
+
+.boton-salir {
+
+    border:
+        none;
+
+    background:
+        #222;
+
+    color:
+        white;
+
+    padding:
+        10px 15px;
+
+    border-radius:
+        7px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+}
+
+
+.boton-salir:hover {
+
+    background:
+        #444;
+
+}
+
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.contenedor {
+
+    width:
+        min(1400px, 94%);
+
+    margin:
+        30px auto;
+
+}
+
+
+/* =========================================================
+   CABECERA
+   ========================================================= */
+
+.cabecera-pagina {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.etiqueta {
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1.5px;
+
+    color:
+        #777;
+
+}
+
+
+.cabecera-pagina h2 {
+
+    margin:
+        5px 0;
+
+    font-size:
+        30px;
+
+}
+
+
+.cabecera-pagina p {
+
+    color:
+        #777;
+
+}
+
+
+.boton-actualizar {
+
+    border:
+        none;
+
+    background:
+        #222;
+
+    color:
+        white;
+
+    padding:
+        12px 18px;
+
+    border-radius:
+        8px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.boton-actualizar:hover {
+
+    background:
+        #444;
+
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS
+   ========================================================= */
+
+.estadisticas {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        18px;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.tarjeta-estadistica {
+
+    background:
+        white;
+
+    border:
+        1px solid #e5e5e5;
+
+    border-radius:
+        12px;
+
+    padding:
+        20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+}
+
+
+.tarjeta-estadistica .icono {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border-radius:
+        10px;
+
+    background:
+        #eeeeee;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        22px;
+
+}
+
+
+.tarjeta-estadistica .icono.pendiente {
+
+    background:
+        #fff4d6;
+
+}
+
+
+.tarjeta-estadistica .icono.pagado {
+
+    background:
+        #dff6e7;
+
+}
+
+
+.tarjeta-estadistica .icono.dinero {
+
+    background:
+        #e4eaff;
+
+}
+
+
+.tarjeta-estadistica span {
+
+    display:
+        block;
+
+    font-size:
+        12px;
+
+    color:
+        #777;
+
+    margin-bottom:
+        4px;
+
+}
+
+
+.tarjeta-estadistica strong {
+
+    font-size:
+        21px;
+
+}
+
+
+/* =========================================================
+   HERRAMIENTAS
+   ========================================================= */
+
+.barra-herramientas {
+
+    display:
+        flex;
+
+    gap:
+        15px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.buscador {
+
+    flex:
+        1;
+
+    background:
+        white;
+
+    border:
+        1px solid #ddd;
+
+    border-radius:
+        9px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    padding:
+        0 15px;
+
+}
+
+
+.buscador i {
+
+    color:
+        #888;
+
+    font-size:
+        20px;
+
+}
+
+
+.buscador input {
+
+    width:
+        100%;
+
+    border:
+        none;
+
+    outline:
+        none;
+
+    padding:
+        14px;
+
+    font-size:
+        14px;
+
+}
+
+
+#filtroEstado {
+
+    min-width:
+        200px;
+
+    border:
+        1px solid #ddd;
+
+    background:
+        white;
+
+    border-radius:
+        9px;
+
+    padding:
+        0 15px;
+
+    outline:
+        none;
+
+}
+
+
+/* =========================================================
+   PEDIDOS
+   ========================================================= */
+
+.pedidos {
+
+    display:
+        grid;
+
+    gap:
+        18px;
+
+}
+
+
+.pedido {
+
+    background:
+        white;
+
+    border:
+        1px solid #e2e2e2;
+
+    border-radius:
+        12px;
+
+    padding:
+        22px;
+
+}
+
+
+.pedido-cabecera {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.pedido-id {
+
+    font-size:
+        13px;
+
+    color:
+        #777;
+
+}
+
+
+.pedido-id strong {
+
+    color:
+        #222;
+
+}
+
+
+.estado {
+
+    padding:
+        6px 11px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.estado.pendiente {
+
+    background:
+        #fff1cf;
+
+    color:
+        #9b6800;
+
+}
+
+
+.estado.pagado {
+
+    background:
+        #dcf6e5;
+
+    color:
+        #19713b;
+
+}
+
+
+.estado.liberado {
+
+    background:
+        #e3edff;
+
+    color:
+        #2355a5;
+
+}
+
+
+.pedido-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.dato {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+}
+
+
+.dato span {
+
+    font-size:
+        11px;
+
+    color:
+        #888;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.dato strong {
+
+    font-size:
+        14px;
+
+    word-break:
+        break-word;
+
+}
+
+
+.ubicaciones {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        18px;
+
+    margin-top:
+        20px;
+
+    padding-top:
+        18px;
+
+    border-top:
+        1px solid #eee;
+
+}
+
+
+.ubicacion {
+
+    padding:
+        14px;
+
+    border-radius:
+        9px;
+
+    background:
+        #f8f8f8;
+
+}
+
+
+.ubicacion strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.ubicacion p {
+
+    font-size:
+        13px;
+
+    color:
+        #555;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.acciones {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    flex-wrap:
+        wrap;
+
+    margin-top:
+        20px;
+
+    padding-top:
+        18px;
+
+    border-top:
+        1px solid #eee;
+
+}
+
+
+.boton {
+
+    border:
+        none;
+
+    padding:
+        11px 15px;
+
+    border-radius:
+        7px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+}
+
+
+.boton-ver {
+
+    background:
+        #eeeeee;
+
+    color:
+        #222;
+
+}
+
+
+.boton-pago {
+
+    background:
+        #1d8f4d;
+
+    color:
+        white;
+
+}
+
+
+.boton-codigo {
+
+    background:
+        #222;
+
+    color:
+        white;
+
+}
+
+
+.boton:disabled {
+
+    opacity:
+        .5;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+/* =========================================================
+   CÓDIGO
+   ========================================================= */
+
+.codigo-liberado {
+
+    margin-top:
+        18px;
+
+    padding:
+        15px;
+
+    background:
+        #f3f7ff;
+
+    border:
+        1px solid #d5e2ff;
+
+    border-radius:
+        9px;
+
+}
+
+
+.codigo-liberado span {
+
+    display:
+        block;
+
+    font-size:
+        11px;
+
+    color:
+        #666;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.codigo-liberado strong {
+
+    font-size:
+        20px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+/* =========================================================
+   CARGANDO / VACÍO
+   ========================================================= */
+
+.cargando,
+.vacio {
+
+    background:
+        white;
+
+    border:
+        1px solid #ddd;
+
+    border-radius:
+        12px;
+
+    padding:
+        50px;
+
+    text-align:
+        center;
+
+    color:
+        #777;
+
+}
+
+
+.cargando i {
+
+    display:
+        inline-block;
+
+    font-size:
+        25px;
+
+    animation:
+        girar 1s linear infinite;
+
+}
+
+
+@keyframes girar {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        rgba(0, 0, 0, .55);
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    z-index:
+        9999;
+
+}
+
+
+.modal.activo {
+
+    display:
+        flex;
+
+}
+
+
+.modal-contenido {
+
+    width:
+        min(700px, 100%);
+
+    max-height:
+        90vh;
+
+    overflow-y:
+        auto;
+
+    background:
+        white;
+
+    border-radius:
+        14px;
+
+    padding:
+        30px;
+
+    position:
+        relative;
+
+}
+
+
+.cerrar-modal {
+
+    position:
+        absolute;
+
+    top:
+        15px;
+
+    right:
+        15px;
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+        #eeeeee;
+
+    cursor:
+        pointer;
+
+    font-size:
+        20px;
+
+}
+
+
+
+```css
+/* =========================================================
+   USUARIO LOGUEADO
+   MENSAJERÍA EXPRESS
+========================================================= */
+
+.usuario-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* =========================================================
+   TARJETA DEL USUARIO
+========================================================= */
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 9px 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    color: #222;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   ICONO DEL USUARIO
+========================================================= */
+
+.usuario i {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   NOMBRE
+========================================================= */
+
+.usuario span {
+    max-width: 180px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   EFECTO AL PASAR EL MOUSE
+========================================================= */
+
+.usuario:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   BOTÓN CERRAR SESIÓN
+========================================================= */
+
+.boton-salir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   ICONO CERRAR SESIÓN
+========================================================= */
+
+.boton-salir i {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   HOVER CERRAR SESIÓN
+========================================================= */
+
+.boton-salir:hover {
+    background: #2a2a2a;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   BOTONES DE INVITADO
+========================================================= */
+
+.botones-invitado {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   BOTONES LOGIN / REGISTRO
+========================================================= */
+
+.login-boton {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 13px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    border: 1px solid #dddddd;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+
+.login-boton i {
+    font-size: 17px;
+}
+
+
+.login-boton:hover {
+    background: #111111;
+
+    color: #ffffff;
+
+    border-color: #111111;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .usuario-contenedor {
+        gap: 7px;
+    }
+
+    .usuario {
+        padding: 7px 10px;
+    }
+
+    .usuario i {
+        width: 30px;
+        height: 30px;
+
+        font-size: 16px;
+    }
+
+    .usuario span {
+        max-width: 100px;
+    }
+
+    .boton-salir {
+        padding: 8px 10px;
+
+        font-size: 12px;
+    }
+
+    .boton-salir i {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .usuario span {
+        max-width: 80px;
+    }
+
+    .boton-salir {
+        font-size: 0;
+    }
+
+    .boton-salir i {
+        font-size: 18px;
+        margin: 0;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .estadisticas {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .pedido-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / MÓVIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .encabezado {
+
+        padding:
+            12px 15px;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            12px;
+
+    }
+
+
+    .usuario-contenedor {
+
+        width:
+            100%;
+
+        justify-content:
+            flex-end;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .usuario span {
+
+        display:
+            none;
+
+    }
+
+
+    .usuario {
+
+        margin-right:
+            auto;
+
+    }
+
+
+    .boton-login,
+    .boton-registro,
+    .boton-salir {
+
+        padding:
+            9px 12px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .cabecera-pagina {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            15px;
+
+    }
+
+
+    .barra-herramientas {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    #filtroEstado {
+
+        height:
+            48px;
+
+    }
+
+
+    .estadisticas {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .pedido-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .ubicaciones {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   MÓVILES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .encabezado {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .logo-contenedor h1 {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .logo-contenedor span {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .usuario-contenedor {
+
+        justify-content:
+            space-between;
+
+    }
+
+
+    .usuario {
+
+        display:
+            none;
+
+    }
+
+
+    .boton-login,
+    .boton-registro,
+    .boton-salir {
+
+        flex:
+            1;
+
+        justify-content:
+            center;
+
+    }
+
+
+    .cabecera-pagina h2 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .cabecera-pagina p {
+
+        font-size:
+            13px;
+
+        line-height:
+            1.5;
+
+    }
+
+}
+
+
+```css
+/* =========================================================
+   TARJETAS DE COTIZACIONES
+   GENERADAS POR ventas.js
+   ========================================================= */
+
+.pedidos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.pedido-card {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 14px;
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.pedido-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.pedido-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: #111111;
+    color: #ffffff;
+}
+
+
+.pedido-card-header h3 {
+    margin: 0 0 6px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+.pedido-fecha {
+    display: block;
+
+    font-size: 12px;
+
+    color: #aaaaaa;
+}
+
+
+/* =========================================================
+   ESTADO
+   ========================================================= */
+
+.pedido-estado {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* IMPORTANTE:
+   Tu JS genera:
+   estado-pendiente
+   estado-pagado
+   estado-liberado
+   etc.
+*/
+
+.pedido-estado.estado-pendiente {
+    background: #fff1cf;
+    color: #9b6800;
+}
+
+
+.pedido-estado.estado-pagado {
+    background: #dcf6e5;
+    color: #19713b;
+}
+
+
+.pedido-estado.estado-liberado {
+    background: #e3edff;
+    color: #2355a5;
+}
+
+
+.pedido-estado.estado-en_camino {
+    background: #fff0d8;
+    color: #a45b00;
+}
+
+
+.pedido-estado.estado-entregado {
+    background: #dff6e7;
+    color: #19713b;
+}
+
+
+.pedido-estado.estado-cancelado {
+    background: #ffe0e0;
+    color: #a52323;
+}
+
+
+/* =========================================================
+   CUERPO
+   ========================================================= */
+
+.pedido-card-body {
+    padding: 20px;
+}
+
+
+/* =========================================================
+   ORIGEN / DESTINO
+   ========================================================= */
+
+.pedido-dato {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.pedido-dato:first-child {
+    padding-top: 0;
+}
+
+
+.pedido-dato:last-of-type {
+    border-bottom: none;
+}
+
+
+.pedido-dato>i {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #f1f1f1;
+
+    color: #222222;
+
+    font-size: 19px;
+}
+
+
+.pedido-dato strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 11px;
+
+    color: #777777;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+}
+
+
+.pedido-dato p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #333333;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   RESUMEN
+   PESO / DISTANCIA / TARIFA
+   ========================================================= */
+
+.pedido-resumen {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 17px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+.pedido-resumen>div {
+    padding: 12px;
+
+    background: #f8f8f8;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 9px;
+
+    text-align: center;
+}
+
+
+.pedido-resumen span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    color: #888888;
+
+    text-transform: uppercase;
+
+    font-weight: 700;
+}
+
+
+.pedido-resumen strong {
+    display: block;
+
+    font-size: 14px;
+
+    color: #222222;
+}
+
+
+/* TARIFA DESTACADA */
+
+.pedido-resumen>div:last-child {
+    background: #111111;
+
+    border-color: #111111;
+}
+
+
+.pedido-resumen>div:last-child span {
+    color: #aaaaaa;
+}
+
+
+.pedido-resumen>div:last-child strong {
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   PIE DE LA TARJETA
+   ========================================================= */
+
+.pedido-card-footer {
+    padding: 15px 20px;
+
+    border-top: 1px solid #eeeeee;
+
+    background: #fafafa;
+}
+
+
+/* =========================================================
+   BOTÓN VER PEDIDO
+   ========================================================= */
+
+.boton-ver-pedido {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #222222;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .2s ease;
+}
+
+
+.boton-ver-pedido i {
+    font-size: 18px;
+}
+
+
+.boton-ver-pedido:hover {
+    background: #000000;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, .15);
+}
+
+
+/* =========================================================
+   MENSAJES
+   ========================================================= */
+
+.mensaje-pedidos {
+    grid-column: 1 / -1;
+
+    padding: 50px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e2e2;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    color: #777777;
+}
+
+
+.mensaje-pedidos i {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 38px;
+
+    color: #999999;
+}
+
+
+.mensaje-pedidos p {
+    margin-bottom: 7px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #444444;
+}
+
+
+.mensaje-pedidos small {
+    display: block;
+
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #888888;
+}
+
+
+/* =========================================================
+   MODAL - DETALLE DEL PEDIDO
+   ========================================================= */
+
+.detalle-pedido {
+    padding: 5px;
+}
+
+
+.detalle-pedido>h2 {
+    margin-bottom: 22px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 24px;
+
+    color: #222222;
+}
+
+
+/* =========================================================
+   SECCIONES DEL DETALLE
+   ========================================================= */
+
+.detalle-seccion {
+    margin-bottom: 15px;
+
+    padding: 16px;
+
+    background: #f8f8f8;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 10px;
+}
+
+
+.detalle-seccion h3 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    font-size: 13px;
+
+    color: #222222;
+}
+
+
+.detalle-seccion h3 i {
+    font-size: 18px;
+
+    color: #555555;
+}
+
+
+.detalle-seccion p {
+    margin: 5px 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #555555;
+}
+
+
+.detalle-seccion p strong {
+    color: #222222;
+}
+
+
+/* =========================================================
+   PRECIO DEL DETALLE
+   ========================================================= */
+
+.detalle-seccion.precio-detalle {
+    background: #111111;
+
+    border-color: #111111;
+
+    text-align: center;
+}
+
+
+.detalle-seccion.precio-detalle h3 {
+    justify-content: center;
+
+    color: #aaaaaa;
+}
+
+
+.detalle-seccion.precio-detalle h3 i {
+    color: #ffffff;
+}
+
+
+.detalle-seccion.precio-detalle>strong {
+    display: block;
+
+    font-size: 28px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .pedidos {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .pedido-card-header {
+        flex-direction: column;
+    }
+
+
+    .pedido-estado {
+        align-self: flex-start;
+    }
+
+
+    .pedido-resumen {
+        grid-template-columns: 1fr;
+    }
+
+
+    .pedido-card-body {
+        padding: 16px;
+    }
+
+
+    .pedido-card-footer {
+        padding: 14px 16px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .pedido-card-header {
+        padding: 16px;
+    }
+
+
+    .pedido-card-header h3 {
+        font-size: 16px;
+    }
+
+
+    .pedido-dato p {
+        font-size: 12px;
+    }
+
+
+    .detalle-pedido>h2 {
+        font-size: 21px;
+    }
+
+}
+
+
+
+``` ### CSS que necesitas agregar a `ventas.css` Esto es **solo para los elementos nuevos**,
+no reemplaza tu CSS actual: ```css
+/* =========================================================
+   BOTONES DE LA COTIZACIÓN
+========================================================= */
+
+.pedido-card-footer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.boton-ver-pedido {
+    flex: 1;
+}
+
+.boton-confirmar-pago {
+    flex: 1;
+    border: none;
+    padding: 11px 15px;
+    border-radius: 8px;
+    background: #198754;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition: .2s ease;
+}
+
+.boton-confirmar-pago:hover:not(:disabled) {
+    background: #146c43;
+    transform: translateY(-1px);
+}
+
+.boton-confirmar-pago:disabled {
+    background: #d8f0df;
+    color: #23713d;
+    cursor: default;
+}
+
+
+/* =========================================================
+   GENERAR CÓDIGO
+========================================================= */
+
+.boton-generar-codigo {
+    flex: 1;
+    border: none;
+    padding: 11px 15px;
+    border-radius: 8px;
+    background: #222222;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition: .2s ease;
+}
+
+.boton-generar-codigo:hover:not(:disabled) {
+    background: #000000;
+    transform: translateY(-1px);
+}
+
+.boton-generar-codigo:disabled {
+    background: #eeeeee;
+    color: #999999;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ESTADO DEL PAGO
+========================================================= */
+
+.estado-pago-card {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 9px;
+    background: #fafafa;
+    border: 1px solid #eeeeee;
+}
+
+.estado-pago-card>span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 10px;
+    color: #888888;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.estado-pago-card strong {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.pago-confirmado {
+    color: #198754;
+}
+
+.pago-pendiente {
+    color: #9b6800;
+}
+
+
+/* =========================================================
+   CÓDIGO GENERADO
+========================================================= */
+
+.codigo-generado-card {
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+    background: #f3f7ff;
+    border: 1px solid #d5e2ff;
+    border-radius: 9px;
+}
+
+.codigo-generado-card span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 10px;
+    color: #666666;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.codigo-generado-card strong {
+    font-size: 21px;
+    letter-spacing: 3px;
+    color: #222222;
+}
+
+
+
+/* =========================================================
+   MENSAJERÍA EXPRESS
+   TRACKING MANUAL
+========================================================= */
+
+
+/* =========================================================
+   SECCIÓN GENERAL
+========================================================= */
+
+.tracking-seccion {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.tracking-seccion h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   LÍNEA DE TRACKING
+========================================================= */
+
+.tracking-linea {
+    position: relative;
+    width: 100%;
+    margin: 10px 0 25px;
+}
+
+
+/* =========================================================
+   EVENTO
+========================================================= */
+
+.tracking-evento {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    min-height: 70px;
+}
+
+
+/* =========================================================
+   ICONO
+========================================================= */
+
+.tracking-icono {
+    position: relative;
+    z-index: 2;
+
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111827;
+    color: #ffffff;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.tracking-contenido {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 2px;
+
+    min-width: 0;
+}
+
+
+.tracking-contenido strong {
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+.tracking-contenido span {
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+.tracking-contenido p {
+    margin-top: 7px;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #4b5563;
+}
+
+
+/* =========================================================
+   CONECTOR
+========================================================= */
+
+.tracking-conector {
+    width: 2px;
+    height: 28px;
+
+    margin-left: 20px;
+
+    background: #d1d5db;
+}
+
+
+/* =========================================================
+   TRACKING VACÍO
+========================================================= */
+
+.tracking-vacio {
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+
+    color: #6b7280;
+}
+
+
+.tracking-vacio i {
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+
+.tracking-vacio p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   AVISO
+========================================================= */
+
+.tracking-aviso {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 15px;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+.tracking-aviso i {
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.tracking-botones {
+    margin-top: 22px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+
+.tracking-botones h4 {
+    margin: 0 0 12px;
+
+    font-size: 14px;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   BOTÓN TRACKING
+========================================================= */
+
+.boton-tracking {
+    width: 100%;
+
+    min-height: 44px;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.boton-tracking:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+.boton-tracking:active {
+    transform: translateY(0);
+}
+
+
+.boton-tracking i {
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   ESTADO COMPLETADO
+========================================================= */
+
+.tracking-completado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    background: #f3f4f6;
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.tracking-completado i {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   CÓDIGO / GUÍA
+========================================================= */
+
+.codigo-generado-card {
+    margin-top: 12px;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.codigo-generado-card span {
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+.codigo-generado-card strong {
+    font-size: 16px;
+
+    letter-spacing: 0.5px;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   ESTADO DEL PAGO
+========================================================= */
+
+.estado-pago-card {
+    margin-top: 12px;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.estado-pago-card>span {
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+.estado-pago-card strong {
+    font-size: 14px;
+}
+
+
+.pago-confirmado {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.pago-pendiente {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* =========================================================
+   ESTADOS DE TARJETAS
+========================================================= */
+
+.pedido-estado.estado-pendiente {
+    background: #f3f4f6;
+}
+
+
+.pedido-estado.estado-liberado {
+    background: #f3f4f6;
+}
+
+
+.pedido-estado.estado-en_ruta {
+    background: #f3f4f6;
+}
+
+
+.pedido-estado.estado-en_destino {
+    background: #f3f4f6;
+}
+
+
+.pedido-estado.estado-entregado {
+    background: #f3f4f6;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-abierto {
+    animation: aparecerModalTracking 0.2s ease;
+}
+
+
+@keyframes aparecerModalTracking {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   DETALLE
+========================================================= */
+
+.detalle-seccion {
+    margin-bottom: 20px;
+}
+
+
+.detalle-seccion h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 10px;
+}
+
+
+.detalle-seccion p {
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PRECIO
+========================================================= */
+
+.precio-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.precio-detalle>strong {
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .tracking-evento {
+        gap: 10px;
+    }
+
+
+    .tracking-icono {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+
+        font-size: 18px;
+    }
+
+
+    .tracking-conector {
+        margin-left: 18px;
+    }
+
+
+    .tracking-contenido strong {
+        font-size: 14px;
+    }
+
+
+    .tracking-contenido span {
+        font-size: 11px;
+    }
+
+
+    .tracking-contenido p {
+        font-size: 12px;
+    }
+
+
+    .boton-tracking {
+        min-height: 46px;
+    }
+
+}

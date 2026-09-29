@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ventas Mensajeria_Express</title>
+
+
+    <!-- =====================================================
+         REMIX ICON
+    ====================================================== -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="ventas.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ENCABEZADO
+    ====================================================== -->
+
+    <header class="encabezado">
+
+
+        <!-- =================================================
+             LOGO / NOMBRE
+        ================================================== -->
+
+        <div class="logo-contenedor">
+
+            <div>
+
+                <h1>
+                    Mensajeria Express
+                </h1>
+
+                <span>
+                    Sistema de ventas
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             USUARIO / AUTENTICACIÓN
+        ================================================== -->
+
+        <div class="usuario-contenedor">
+
+
+            <!-- =================================================
+                 USUARIO ACTUAL
+            ================================================== -->
+
+            <div id="usuarioActual" class="usuario">
+
+                <i class="ri-user-line"></i>
+
+                <span>
+                    Invitado
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 BOTONES PARA INVITADOS
+            ================================================== -->
+
+            <div id="botonesInvitado" class="botones-invitado" style="display: flex;">
+
+
+                <!-- INICIAR SESIÓN -->
+
+                <a href="iniciarsesion.html" class="login-boton">
+
+                    <i class="ri-login-box-line"></i>
+
+                    <span>
+                        Iniciar sesión
+                    </span>
+
+                </a>
+
+
+                <!-- REGISTRARSE -->
+
+                <a href="registrarse.html" class="login-boton">
+
+                    <i class="ri-user-add-line"></i>
+
+                    <span>
+                        Registrarse
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 CERRAR SESIÓN
+            ================================================== -->
+
+            <button id="cerrarSesion" class="boton-salir" style="display: none;">
+
+                <i class="ri-logout-box-line"></i>
+
+                Cerrar sesión
+
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main class="contenedor">
+
+
+        <!-- =================================================
+             CABECERA DE PÁGINA
+        ================================================== -->
+
+        <section class="cabecera-pagina">
+
+            <div>
+
+                <span class="etiqueta">
+                    PANEL DE VENTAS
+                </span>
+
+                <h2>
+                    Pedidos Express
+                </h2>
+
+                <p>
+                    Administra los pedidos, pagos y códigos
+                    de liberación de los clientes.
+                </p>
+
+
+                <button id="actualizarPedidos" class="boton-actualizar">
+
+                    <i class="ri-refresh-line"></i>
+
+                    Actualizar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESTADÍSTICAS
+        ================================================== -->
+
+        <section class="estadisticas">
+
+
+            <!-- TOTAL PEDIDOS -->
+
+            <div class="tarjeta-estadistica">
+
+                <div class="icono">
+
+                    <i class="ri-file-list-3-line"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total pedidos
+                    </span>
+
+                    <strong id="total-pedidos">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PENDIENTES -->
+
+            <div class="tarjeta-estadistica">
+
+                <div class="icono pendiente">
+
+                    <i class="ri-time-line"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Pendientes
+                    </span>
+
+                    <strong id="pedidosPendientes">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAGADOS -->
+
+            <div class="tarjeta-estadistica">
+
+                <div class="icono pagado">
+
+                    <i class="ri-checkbox-circle-line"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Pagados
+                    </span>
+
+                    <strong id="pedidosPagados">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- INGRESOS -->
+
+            <div class="tarjeta-estadistica">
+
+                <div class="icono dinero">
+
+                    <i class="ri-money-dollar-circle-line"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Ingresos
+                    </span>
+
+                    <strong id="ingresosTotales">
+                        Q0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BARRA DE HERRAMIENTAS
+        ================================================== -->
+
+        <section class="barra-herramientas">
+
+
+            <!-- BUSCADOR -->
+
+            <div class="buscador">
+
+                <i class="ri-search-line"></i>
+
+                <input type="text" id="buscarPedido" placeholder="Buscar por ID, nombre, correo o teléfono...">
+
+            </div>
+
+
+            <!-- FILTRO -->
+
+            <select id="filtroEstado">
+
+                <option value="todos">
+                    Todos los pedidos
+                </option>
+
+                <option value="pendiente">
+                    Pendientes de pagos
+                </option>
+
+                <option value="pagado">
+                    Pagados
+                </option>
+
+                <option value="liberado">
+                    Código liberado
+                </option>
+
+            </select>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             PEDIDOS
+        ================================================== -->
+
+        <section id="contenedorPedidos" class="pedidos">
+
+            <div class="cargando">
+
+                <i class="ri-loader-4-line"></i>
+
+                <span>
+                    Cargando pedidos...
+                </span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MODAL PEDIDO
+    ====================================================== -->
+
+    <div id="modalPedido" class="modal">
+
+        <div class="modal-contenido">
+
+
+            <!-- CERRAR MODAL -->
+
+            <button id="cerrarModal" class="cerrar-modal">
+
+                <i class="ri-close-line"></i>
+
+            </button>
+
+
+            <!-- CONTENIDO -->
+
+            <div id="contenidoModal">
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
+
+
+    <!-- =====================================================
+         JAVASCRIPT DE VENTAS
+    ====================================================== -->
+
+    <script src="ventas.js"></script>
+
+
+</body>
+
+</html>
+
+<div id="usuarioActual" class="usuario">
+
+    <i class="ri-user-line"></i>
+
+    <span>
+        Invitado
+    </span>
+
+</div>
